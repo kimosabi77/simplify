@@ -15,7 +15,7 @@
   Add the lib directory to your PHP include path to access the SDK from
   your application:
 
-      require_once 'Simplify.php'
+      composer require kimoslim/simplify
 
 
   Using the SDK
@@ -25,12 +25,12 @@
   script substituting your public and private API keys:
 
     <?php
-        require_once("Simplify.php");
+        use KimoSlim\Simplify;
 
-        Simplify::$publicKey = 'YOUR_PUBLIC_API_KEY';
-        Simplify::$privateKey = 'YOUR_PRIVATE_API_KEY';
+        \KimoSlim\Simplify::$publicKey = 'YOUR_PUBLIC_API_KEY';
+        \KimoSlim\Simplify::$privateKey = 'YOUR_PRIVATE_API_KEY';
 
-        $payment = Simplify_Payment::createPayment(array(
+        $payment = \KimoSlim\SimplifyPayment::createPayment(array(
             "card" => array(
                  "number" => "5555555555554444",
                  "expMonth" => 11,
@@ -39,7 +39,7 @@
             ),
             'amount' => '1000',
             'description' => 'prod description',
-            'currency' => 'USD'
+            'currency' => 'AUD'
         ));
 
         print_r($payment);
