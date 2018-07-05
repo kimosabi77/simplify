@@ -25,8 +25,8 @@
   script substituting your public and private API keys:
 
     <?php
-        use KimoSlim\Simplify;
-
+        require-once 'vendor/autoload.php';
+        
         \KimoSlim\Simplify::$publicKey = 'YOUR_PUBLIC_API_KEY';
         \KimoSlim\Simplify::$privateKey = 'YOUR_PRIVATE_API_KEY';
 
